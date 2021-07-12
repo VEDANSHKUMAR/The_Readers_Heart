@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock title %} 
+{% block homeactive %} active {% endblock homeactive  %}
+{% block body %}
+<style>
+h1 {text-align: center;}
+p {text-align: center;}
+div {text-align: center;}
+</style>
+<div class='container my-3'>
+<div class="jumbotron">
+  <h1 class="display-4"><b>Reader's Heart</b></h1>
+  <p class="lead"><b>Welcome to the Reader's Heart!</b></p>
+  <hr class="my-4">
+  <p><i>The Following Click will take you to the Blog section!!</i> </p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="/main" role="button">CLICK</a>
+  </p>
+</div>
+</div>
+<div class="container">
+<h2>What is Reader's Heart</h2>
+<p>Reader's Heart is the place where You can come and get all the intresting things which will be very close to the reader's heart!!</p>
+</div>
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8 mt-3 left">
+            
+            {% for post in allPosts %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    <p class="card-text text-muted h6">{{ post.writer }} </p>
+                    <p class="card-text">{{post.content|slice:":200" }}</p>
+                    
+                </div>
+            </div>
+            {% endfor %}
+{% endblock body %}

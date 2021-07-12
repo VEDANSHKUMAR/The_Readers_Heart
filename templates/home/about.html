@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %} About us ! {% endblock title %} 
+{% block aboutactive %} active {% endblock aboutactive %}
+{% block body %}
+<style>
+h1 {text-align: center;}
+p {text-align: left;}
+div {text-align: center;}
+</style>
+<h1>Hello Readers Here You can find all about the <i>The Reader's Heart</i></h1>
+<p>This is the <i><u>This is Reader's Heart</u></i>here we write some of the good blogs which connect to the reader's heart. For now only the admin can add to the blog but soon this site will be providing the access where all the reader's will be writers too.</p>
+<p><b>You can try contecting the writers through the following information</b></p>
+                <ul>
+                    <p>Vedansh:<br>
+                     Contact No.: 5889945198<br>
+                     email : shanki@09gmail.com
+                    </p>
+                    <p>Piyush:<br>
+                     Contact No.: 9876543320<br>
+                     email : shanki2000abc@09gmail.com
+                    </p>
+                </ul>
+
+<div class="container">
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8 mt-3 left">
+            <h4>These are the writers those have contributed to our blog!!</h4>
+            {% for post in allPosts  %}
+            
+            <div class="card mb-4">
+                <div class="card-body">
+                <ul>
+                    <li> <p class="card-text text-muted h6">{{ post.writer}} </p></li>
+                </ul>
+                    
+                   
+                    
+                    
+                </div>
+            </div>
+            {% endfor %}
+{% endblock body %}
